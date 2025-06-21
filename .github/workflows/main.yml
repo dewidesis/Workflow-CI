@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  CSV_URL: "MLproject/lung_cancer_preprocessing.csv"
+  CSV_URL: "MLModel/lung_cancer_preprocessing.csv"
   TARGET_VAR: "Lung_Cancer"
 
 jobs:
@@ -33,11 +33,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r ./MLProject/requirements.txt
+        pip install -r ./MLModel/requirements.txt
 
     - name: Run mlflow project
       run: |
-        mlflow run MLProject --env-manager=local
+        mlflow run MLModel --env-manager=local
 
     - name: Get latest MLflow run_id
       run: |
@@ -47,7 +47,7 @@ jobs:
       run: |
         echo "Install dependencies dari model jika perlu"
         # Contoh jika model tersimpan di model_dir/model
-        pip install -r model_dir/model/requirements.txt || echo "Tidak ada file requirements"
+        pip install -r MLModel/requirements.txt || echo "Tidak ada file requirements"
 
     - name: Upload to Google Drive
       run: |
