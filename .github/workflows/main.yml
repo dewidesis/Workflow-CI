@@ -62,9 +62,9 @@ jobs:
 
     - name: Tag Docker Image
       run: |
-        docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/workflow-ci:latest ${{ secrets.DOCKER_HUB_USERNAME }}/workflow-ci:v1.0.0
+        docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/workflowci ${{ secrets.DOCKER_HUB_USERNAME }}/workflowci:latest
 
     - name: Push Docker Image
       run: |
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/workflow-ci:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/workflow-ci:v1.0.0
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/workflowci
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/workflowci:latest
