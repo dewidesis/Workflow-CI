@@ -8,25 +8,11 @@ from datetime import datetime
 from dagshub import dagshub_logger
 import dagshub
 
-dagshub.init(repo_owner='dewidesis', repo_name='SMSML_Dewi', mlflow=True)
+# dagshub.init(repo_owner='dewidesis', repo_name='SMSML_Dewi', mlflow=True)
 
-mlflow.set_tracking_uri("https://dagshub.com/dewidesis/SMSML_Dewi.mlflow")
+# mlflow.set_tracking_uri("https://dagshub.com/dewidesis/SMSML_Dewi.mlflow")
 
 data = pd.read_csv("lung_cancer_preprocessing.csv")
-
-data = data.astype("float64")
-
-X = data.drop("lung_cancer", axis=1)
-y = data["lung_cancer"]
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    random_state=42,
-    test_size=0.2
-)
-
-input_example = X_train[0:5]
 
 X_train, X_test, y_train, y_test = train_test_split(
     data.drop("lung_cancer", axis=1),
