@@ -10,7 +10,7 @@ on:
 
 env:
   CSV_URL: "MLModel/lung_cancer_preprocessing.csv"
-  TARGET_VAR: "Lung_Cancer"
+  TARGET_VAR: "lung_cancer"
 
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
 
     - name: Run mlflow project
       run: |
-        mlflow run MLModel --env-manager=local
+        mlflow run MLProject --env-manager=local
 
     - name: Get latest MLflow run_id
       run: |
@@ -46,7 +46,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         echo "Install dependencies dari model jika perlu"
-        # Contoh jika model tersimpan di model_dir/model
+        # Contoh jika model tersimpan di MLModel
         pip install -r MLModel/requirements.txt || echo "Tidak ada file requirements"
 
     - name: Upload to Google Drive
