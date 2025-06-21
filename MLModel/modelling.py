@@ -5,12 +5,6 @@ from sklearn.model_selection import train_test_split
 import random
 import numpy as np
 from datetime import datetime
-from dagshub import dagshub_logger
-import dagshub
-
-# dagshub.init(repo_owner='dewidesis', repo_name='SMSML_Dewi', mlflow=True)
-
-# mlflow.set_tracking_uri("https://dagshub.com/dewidesis/SMSML_Dewi.mlflow")
 
 data = pd.read_csv("lung_cancer_preprocessing.csv")
 
