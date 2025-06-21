@@ -9,8 +9,8 @@ on:
       - main
 
 env:
-  CSV_URL: "MLModel/lung_cancer_preprocessing.csv"
-  TARGET_VAR: "lung_cancer"
+  CSV_URL: "MLproject/lung_cancer_preprocessing.csv"
+  TARGET_VAR: "Lung_Cancer"
 
 jobs:
   build:
@@ -33,11 +33,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r ./MLModel/requirements.txt
+        pip install -r ./MLProject/requirements.txt
 
     - name: Run mlflow project
       run: |
-        mlflow run MLModel --env-manager=local
+        mlflow run MLProject --env-manager=local
 
     - name: Get latest MLflow run_id
       run: |
